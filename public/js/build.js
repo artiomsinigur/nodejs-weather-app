@@ -11,7 +11,7 @@ form.addEventListener('submit', (e) => {
     // Text decorative, just to show that data is loading
     createElm(content, 'p', 'Loading...');
 
-    fetch('http://localhost:3000/weather?address=' + inputLocation)
+    fetch('/weather?address=' + inputLocation)
         .then((response) => {
             return response.json();
         })

@@ -5,6 +5,8 @@ const getGeocoding = require('./utils/geocoding');
 const getForecast = require('./utils/forecast');
 
 const app = express();
+// Setup a port for heroku
+const PORT = process.env.PORT || 3000;
 
 // Define render view engine hbs(handlebar)
 // app.set('view engine', 'hbs');
@@ -119,6 +121,6 @@ app.get('*', (req, res) => {
 });
 
 // Start server
-app.listen(3000, () => {
-    console.log('Server is up on port 3000.');
+app.listen(PORT, () => {
+    console.log('Server is up on port ' + PORT);
 });
