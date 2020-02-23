@@ -1,0 +1,16 @@
+{% extends 'layouts/app.html' %}
+
+    {% block main %}
+        <h2>{{title}}</h2>
+        <ul>
+            {% for item in cities %}
+                <li>{{ item.city }}</li>
+            {% endfor %}
+        </ul>
+
+        <form action="">
+            <input type="text" name="search" placeholder="Location">
+            <button>Search</button>
+        </form>
+        <div id="content"></div>
+    {% endblock %}

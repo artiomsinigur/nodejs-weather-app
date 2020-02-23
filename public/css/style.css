@@ -1,0 +1,41 @@
+h1 {
+    margin-bottom: .3rem;
+    font-size: 5rem;
+    color: lightskyblue;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    max-width: 800px;
+    margin: 0 auto;
+    
+    font-family: Arial, Helvetica, sans-serif;
+    color: gray;
+}
+
+main {
+    flex-grow: 1;
+}
+
+img {
+    max-width: 120px;
+}
+
+nav a {
+    display: inline-block;
+    margin: 0 .3rem;
+    padding: .5rem;
+}
+
+header {
+    padding: 1rem 0;
+}
+
+footer {
+    /* margin-top: auto; */
+    padding: 1rem 0;
+    text-align: center;
+    border-top: 1px solid lightgray;
+}
