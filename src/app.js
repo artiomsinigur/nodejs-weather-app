@@ -57,13 +57,13 @@ app.get('/weather', (req, res) => {
         });
     }
 
-    getGeocoding(req.query.address, (err, {longitude, latitude, placeName} = {}) => {
+    getGeocoding(req.query.address, (err, {latitude, longitude, placeName} = {}) => {
         if (err) {
             // return res.render('weather.html', {error: err});
             return res.send({error: err});
         }
 
-        getForecast(longitude, latitude, (err, forecastData) => {
+        getForecast(latitude, longitude, (err, {currently, daily, today}) => {
             if (err) {
                 // return res.render('weather.html', {error: err});
                 return res.send({error: err});
@@ -77,7 +77,10 @@ app.get('/weather', (req, res) => {
             // When the parameter is an Array or Object, Express responds with the JSON:
             res.send({
                 location: placeName,
-                forecast: forecastData,
+                // forecast: forecastData,
+                currently, 
+                daily, 
+                today,
             });
         });
     });

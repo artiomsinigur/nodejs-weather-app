@@ -1,16 +1,25 @@
 {% extends 'layouts/app.html' %}
 
     {% block main %}
-        <h2>{{title}}</h2>
-        <ul>
-            {% for item in cities %}
-                <li>{{ item.city }}</li>
-            {% endfor %}
-        </ul>
+    <div class="search">
+        <div class="card shadow-sm mb-2">
+            <div class="card-body">
+                <p>Please provide a city/address to get forecast</p>
+                    <form action="" class="form-inline">
+                        <div class="form-group mr-2">
+                            <input type="text" name="search" class="form-control" placeholder="Location">
+                        </div>
+                        <button class="btn btn-primary">Search</button>
+                    </form>
+                </div>
+            </div>
+        </div>
 
-        <form action="">
-            <input type="text" name="search" placeholder="Location">
-            <button>Search</button>
-        </form>
+        <div class="forecast" id="todayForecast">
+        </div>
+
+        <div class="daily" id="daily">
+        </div>
+
         <div id="content"></div>
     {% endblock %}
