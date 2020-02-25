@@ -1,5 +1,10 @@
 {% extends 'layouts/app.html' %}
 
     {% block main %}
-        <h1>List of country</h1>
+        <h2>{{ title }}</h2>
+        <ul>
+            {% for item in cities%}
+                <li>{{ item.city }}</li>
+            {% endfor %}
+        </ul>
     {% endblock %}
